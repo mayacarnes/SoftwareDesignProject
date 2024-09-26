@@ -6,3 +6,4 @@ fun main() {
     val x = "Hello, world!"
     println("The string is ${x.length}")
 }
+
