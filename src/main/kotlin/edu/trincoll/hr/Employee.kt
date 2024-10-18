@@ -1,5 +1,7 @@
 package edu.trincoll.hr
 
+import edu.trincoll.shapes.Shape
+
 // Abstract class Employee should have:
 //   - a name of type String
 //   - an id of type Int.
@@ -10,7 +12,21 @@ package edu.trincoll.hr
 // that returns a Double.
 //
 // It should override the toString method to
-// return a string with the name and id of the employee.
-abstract class Employee(
-) {
+// return a string!!!! with the name and id of the employee.
+
+
+abstract class Employee(val name: String, val id: Int) : Comparable<Employee> {
+
+   abstract fun pay(): Double
+
+    override fun compareTo(other: Employee): Int {
+        return this.id.compareTo(other.id)
+    }
+
+
+   override fun toString(): String {
+       return "Employee Name: $name, Employee ID: $id"
+   }
+
 }
+
